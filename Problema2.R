@@ -25,3 +25,8 @@ mod <- lm(y~x)
 mod
 summary(mod)
 abline(mod, col="blue", lwd = 5)
+#coeficiente de determinacio R^2
+ypred <- predict(mod, data.frame(x=x))
+Rsq <- sum((ypred-mean(y))^2)/sum((y -mean(y))^2)
+Rsq
+summary(mod)
